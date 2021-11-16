@@ -1,5 +1,10 @@
+if (process.env.NODE_ENV !== "production") {
+	require("dotenv").config();
+}
+
 const Discord = require("discord.js");
 const Bot = new Discord.Client();
+const BOT_TOKEN = process.env.BOT_TOKEN;
 const fs = require("fs");
 const keepAlive = require("./server");
 Bot.commands = new Discord.Collection();
@@ -53,4 +58,4 @@ Bot.on("message", (message) => {
 });
 
 keepAlive();
-Bot.login("OTA5MDg5Mjg5MjM5OTQ5MzEy.YY_NYA.1tgkr85_fXiyAZQn2EnK8qWOyrY");
+Bot.login(BOT_TOKEN);
