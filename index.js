@@ -40,6 +40,7 @@ Bot.on("message", (message) => {
 	if (userHastag != "5551" && message.content.startsWith(prefix)) {
 		console.log(`Sorry ${message.author.tag} but you are not able to use my commands!`);
 		message.channel.send(`Sorry ${message.author.tag} but you are not able to use my commands!`);
+		return;
 	} else {
 		greetings.forEach((greeting) => {
 			if (message.content.toLowerCase().startsWith(greeting)) {
